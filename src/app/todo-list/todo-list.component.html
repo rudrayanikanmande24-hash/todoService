@@ -1,0 +1,17 @@
+<mat-list *ngIf="todoArr.length > 0 ; else NoData">
+  <mat-list-item *ngFor="let todo of todoArr">
+    <div class="todo-row">
+      <strong>{{ todo.todoItem }}</strong>
+
+      <div class="btns">
+        <button mat-raised-button (click)="onEdit(todo)" color="primary">Edit</button>
+        <button mat-raised-button (click)="onRemove(todo.todoId)" color="warn">Remove</button>
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list>
+
+
+<ng-template #NoData>
+  <p class="alert alert-info">Not Data Found</p>
+</ng-template>
